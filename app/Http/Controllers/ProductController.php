@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Scan;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ScanController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Scan $scan)
+    public function index(Product $product)
     {
-        return $scan->all();
+        return $product->all();
     }
 
     /**
@@ -36,14 +36,12 @@ class ScanController extends Controller
     public function store(Request $request)
     {
         $data_to_insert = [
+            'name' => $request->input('name'),
             'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'language_id' => $request->input('language_id'),
         ];
 
-        Scan::create($data_to_insert);
+        Product::create($data_to_insert);
 
         return [
             'hasError' => false,
@@ -54,43 +52,41 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(Product $product)
     {
-        return $scan;
+        return $product;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(Product $product)
     {
-        return $scan;
+        return $product;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, Product $product)
     {
         $data_to_update = [
+            'name' => $request->input('name'),
             'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'language_id' => $request->input('language_id'),
         ];
 
-        $scan->update($data_to_update);
+        $product->update($data_to_update);
 
         return [
             'hasError' => false,
@@ -101,12 +97,12 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function destroy($ids)
     {
-        Scan::whereIn('id', explode(',', $ids))->delete();
+        Product::whereIn('id', explode(',', $ids))->delete();
 
         return [
             'hasError' => false,

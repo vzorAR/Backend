@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Scan;
+use App\Models\Score;
 use Illuminate\Http\Request;
 
-class ScanController extends Controller
+class ScoreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Scan $scan)
+    public function index(Score $score)
     {
-        return $scan->all();
+        return $score->all();
     }
 
     /**
@@ -36,14 +36,11 @@ class ScanController extends Controller
     public function store(Request $request)
     {
         $data_to_insert = [
-            'customer_id' => $request->input('customer_id'),
             'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'activity_id' => $request->input('activity_id'),
         ];
 
-        Scan::create($data_to_insert);
+        Score::create($data_to_insert);
 
         return [
             'hasError' => false,
@@ -54,43 +51,40 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Score  $score
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(Score $score)
     {
-        return $scan;
+        return $score;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Score  $score
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(Score $score)
     {
-        return $scan;
+        return $score;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Score  $score
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, Score $score)
     {
         $data_to_update = [
-            'customer_id' => $request->input('customer_id'),
             'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'activity_id' => $request->input('activity_id'),
         ];
 
-        $scan->update($data_to_update);
+        $score->update($data_to_update);
 
         return [
             'hasError' => false,
@@ -101,12 +95,12 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Score  $score
      * @return \Illuminate\Http\Response
      */
     public function destroy($ids)
     {
-        Scan::whereIn('id', explode(',', $ids))->delete();
+        Score::whereIn('id', explode(',', $ids))->delete();
 
         return [
             'hasError' => false,

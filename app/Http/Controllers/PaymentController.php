@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Scan;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
-class ScanController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Scan $scan)
+    public function index(Payment $payment)
     {
-        return $scan->all();
+        return $payment->all();
     }
 
     /**
@@ -37,13 +37,13 @@ class ScanController extends Controller
     {
         $data_to_insert = [
             'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'product_id' => $request->input('product_id'),
+            'pay_date' => $request->input('pay_date'),
+            'exp_date' => $request->input('exp_date'),
+            'amount' => $request->input('amount'),
         ];
 
-        Scan::create($data_to_insert);
+        Payment::create($data_to_insert);
 
         return [
             'hasError' => false,
@@ -54,43 +54,43 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(Payment $payment)
     {
-        return $scan;
+        return $payment;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(Payment $payment)
     {
-        return $scan;
+        return $payment;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, Payment $payment)
     {
         $data_to_update = [
             'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'product_id' => $request->input('product_id'),
+            'pay_date' => $request->input('pay_date'),
+            'exp_date' => $request->input('exp_date'),
+            'amount' => $request->input('amount'),
         ];
 
-        $scan->update($data_to_update);
+        $payment->update($data_to_update);
 
         return [
             'hasError' => false,
@@ -101,12 +101,12 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
     public function destroy($ids)
     {
-        Scan::whereIn('id', explode(',', $ids))->delete();
+        Payment::whereIn('id', explode(',', $ids))->delete();
 
         return [
             'hasError' => false,

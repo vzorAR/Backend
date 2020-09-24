@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateScansTable extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,15 @@ class CreateScansTable extends Migration
      */
     public function up()
     {
-        Schema::create('scans', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->unsignedBigInteger('language_id');
+            $table->foreign('language_id')
+                ->on('languages')
+                ->references('id')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateScansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scans');
+        Schema::dropIfExists('cities');
     }
 }

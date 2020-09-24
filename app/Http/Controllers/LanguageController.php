@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Scan;
+use App\Models\Language;
 use Illuminate\Http\Request;
 
-class ScanController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Scan $scan)
+    public function index(Language $language)
     {
-        return $scan->all();
+        return $language->all();
     }
 
     /**
@@ -36,14 +36,12 @@ class ScanController extends Controller
     public function store(Request $request)
     {
         $data_to_insert = [
-            'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'title' => $request->input('title'),
+            'flag' => $request->input('flag'),
+            'language_code' => $request->input('language_code'),
         ];
 
-        Scan::create($data_to_insert);
+        Language::create($data_to_insert);
 
         return [
             'hasError' => false,
@@ -54,43 +52,41 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(Language $language)
     {
-        return $scan;
+        return $language;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(Language $language)
     {
-        return $scan;
+        return $language;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, Language $language)
     {
         $data_to_update = [
-            'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'title' => $request->input('title'),
+            'flag' => $request->input('flag'),
+            'language_code' => $request->input('language_code'),
         ];
 
-        $scan->update($data_to_update);
+        $language->update($data_to_update);
 
         return [
             'hasError' => false,
@@ -101,12 +97,12 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
     public function destroy($ids)
     {
-        Scan::whereIn('id', explode(',', $ids))->delete();
+        Language::whereIn('id', explode(',', $ids))->delete();
 
         return [
             'hasError' => false,

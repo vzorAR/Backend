@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Scan;
+use App\Models\City;
 use Illuminate\Http\Request;
 
-class ScanController extends Controller
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Scan $scan)
+    public function index(City $city)
     {
-        return $scan->all();
+        return $city->all();
     }
 
     /**
@@ -36,14 +36,11 @@ class ScanController extends Controller
     public function store(Request $request)
     {
         $data_to_insert = [
-            'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'name' => $request->input('name'),
+            'language_id' => $request->input('language_id'),
         ];
 
-        Scan::create($data_to_insert);
+        City::create($data_to_insert);
 
         return [
             'hasError' => false,
@@ -54,43 +51,40 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(City $city)
     {
-        return $scan;
+        return  $city;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(City $city)
     {
-        return $scan;
+        return  $city;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, City $city)
     {
         $data_to_update = [
-            'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'name' => $request->input('name'),
+            'language_id' => $request->input('language_id'),
         ];
 
-        $scan->update($data_to_update);
+        $city->update($data_to_update);
 
         return [
             'hasError' => false,
@@ -101,12 +95,12 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\City  $city
      * @return \Illuminate\Http\Response
      */
     public function destroy($ids)
     {
-        Scan::whereIn('id', explode(',', $ids))->delete();
+        City::whereIn('id', explode(',', $ids))->delete();
 
         return [
             'hasError' => false,

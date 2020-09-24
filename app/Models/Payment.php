@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Scan extends Model
+class Payment extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,6 @@ class Scan extends Model
      * @var array
      */
     protected $fillable = [
-        'end_user_id', 'customer_id', 'scan_date', 'device', 'ip',
+        'customer_id', 'product_id', 'pay_date', 'exp_date', 'amount',
     ];
 }

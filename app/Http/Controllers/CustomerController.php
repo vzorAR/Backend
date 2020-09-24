@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Scan;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class ScanController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Scan $scan)
+    public function index(Customer $customer)
     {
-        return $scan->all();
+        return $customer->all();
     }
 
     /**
@@ -36,14 +36,13 @@ class ScanController extends Controller
     public function store(Request $request)
     {
         $data_to_insert = [
-            'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
+            'v_per_scan' => $request->input('v_per_scan'),
         ];
 
-        Scan::create($data_to_insert);
+        Customer::create($data_to_insert);
 
         return [
             'hasError' => false,
@@ -54,43 +53,42 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(Customer $customer)
     {
-        return $scan;
+        return $customer;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(Customer $customer)
     {
-        return $scan;
+        return $customer;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, Customer $customer)
     {
         $data_to_update = [
-            'customer_id' => $request->input('customer_id'),
-            'end_user_id' => $request->input('end_user_id'),
-            'scan_date' => $request->input('scan_date'),
-            'device' => $request->input('device'),
-            'ip' => $request->input('ip'),
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
+            'v_per_scan' => $request->input('v_per_scan'),
         ];
 
-        $scan->update($data_to_update);
+        $customer->update($data_to_update);
 
         return [
             'hasError' => false,
@@ -101,12 +99,12 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scan  $scan
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
     public function destroy($ids)
     {
-        Scan::whereIn('id', explode(',', $ids))->delete();
+        Customer::whereIn('id', explode(',', $ids))->delete();
 
         return [
             'hasError' => false,
