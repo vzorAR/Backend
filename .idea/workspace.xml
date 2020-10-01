@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,58 +23,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca5c7125-e715-4f93-a90f-d6a33724034e" name="Default Changelist" comment="vahid">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/EndUserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LanguageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ScoreController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Activity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/City.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/EndUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Language.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Score.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ActivityFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CityFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CustomerFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/EndUserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/LanguageFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/MessageFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/PaymentFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ScoreFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_22_134015_create_languages_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_113101_create_cities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132046_create_customers_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132112_create_products_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132124_create_end_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132153_create_activities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132223_create_messages_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132257_create_scores_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_132400_create_payments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/ActivitySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/CitySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/CustomerSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/EndUserSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/LanguageSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/MessageSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/PaymentSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/ProductSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/ScoreSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/notifications/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ScanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Scan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Scan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_22_143941_create_scans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_143941_create_scans_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +184,12 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hru2XPWNNh5RHGPPfL0afUVD2j" />
@@ -210,9 +206,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PHPProjects\Backend\app\Http\Middleware" />
+      <recent name="D:\PHPProjects\Backend\app\Http\Controllers\Api" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -231,6 +233,10 @@
       <workItem from="1600781326141" duration="3800000" />
       <workItem from="1600867151933" duration="2944000" />
       <workItem from="1600931490162" duration="11231000" />
+      <workItem from="1600943815581" duration="857000" />
+      <workItem from="1601121744946" duration="2749000" />
+      <workItem from="1601536634152" duration="3651000" />
+      <workItem from="1601540994452" duration="13491000" />
     </task>
     <task id="LOCAL-00001" summary="change api">
       <created>1600783567342</created>
@@ -289,10 +295,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="610" y="309" key="#Composer/0.0.1600.860@0.0.1600.860" timestamp="1600781339996" />
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600942750408">
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601546200657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1600942750408" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1601546200657" />
     <state x="580" y="171" key="FileChooserDialogImpl" timestamp="1600781388278">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -313,13 +319,13 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="617" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1600785995776" />
-    <state x="507" y="29" width="585" height="801" key="find.popup" timestamp="1600783247899">
+    <state x="507" y="29" width="585" height="801" key="find.popup" timestamp="1601540960580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="507" y="29" width="585" height="801" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1600783247899" />
-    <state x="463" y="180" key="search.everywhere.popup" timestamp="1600941111570">
+    <state x="507" y="29" width="585" height="801" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1601540960580" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1601540814877">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1600941111570" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1601540814877" />
   </component>
 </project>
