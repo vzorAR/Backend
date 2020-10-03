@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -29,7 +30,7 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('mobile', 'password');
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
@@ -38,6 +39,10 @@ class AuthController extends Controller
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
+
+        $user = User::where('mobile', $request->input('mobile'))->first();
+        $user->password = null;
+        $user->save();
 
         return $this->respondWithToken($token);
     }
@@ -95,50 +100,19 @@ class AuthController extends Controller
             if ($err) {
                 echo "cURL Error #:" . $err;
             } else {
-                if(in_array(json_decode($response)->return->status, [418,422,424,426,428,431,432])) {
+                /*if(in_array(json_decode($response)->return->status, [418,422,424,426,428,431,432])) {
                     $message = json_decode($response)->return->message;
                     return response()->json(['message' => $message]);
-                }
+                }*/
 
                 User::updateOrCreate(
                     ['mobile' => $request->input('mobile')],
                     [
-                        'verification_code' => $token,
+                        'password' => Hash::make($token),
                     ]
                 );
 
-                return true;
-            }
-        }
-    }
-
-    public function verify(Request $request) {
-        $rules = [
-            'mobile' => 'required',
-            'verification_code' => 'required',
-        ];
-        $messages = [
-            'mobile.required' => 'لطفاً شماره همراه خود را وارد نمایید!',
-            'verification_code.required' => 'لطفاً کد ارسالی را وارد نمایید!'
-        ];
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if($validator->fails()) {
-            return response()->json($validator->errors());
-        } else {
-            $exists = User::whereNotNull('verification_code')
-                ->where('mobile', $request->input('mobile'))
-                ->where('verification_code', $request->input('verification_code'))
-                ->count();
-
-            if($exists > 0) {
-                $user = User::where('mobile', $request->input('mobile'))->first();
-                $user->verification_code = null;
-                $user->save();
-
-                return true;
-            } else {
-                return false;
+                return $token;
             }
         }
     }
